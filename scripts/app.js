@@ -17,8 +17,9 @@ let devDetails = getSavedData();
 const filteredSearch = {
     sortDev: ''
 }
-
 //=====================End Here==============//
+
+
 
 
 
@@ -85,6 +86,8 @@ document.querySelector('#addDetails').addEventListener('click', (e) => {
     }
 
 })
+
+
 
 
 let generatingDom = (item) => {
@@ -170,6 +173,8 @@ let generatingDom = (item) => {
     return div;
 }
 
+
+
 ////function to edit a card
 let editDev = (id, name, email, designation, skills, salary, linkedin, github) => {
 
@@ -193,6 +198,8 @@ let editDev = (id, name, email, designation, skills, salary, linkedin, github) =
 
 
 
+
+
 //deleting a card by using a third party lib (uuidv4)
 //by targeting to their ID to delete a particulat card
 let deleteDev = (id) => {
@@ -205,6 +212,8 @@ let deleteDev = (id) => {
         devDetails.splice(devId, 1);
     }
 }
+
+
 
 
 //sorting notes according to the dropdown menu
@@ -222,9 +231,9 @@ let sortNotes = (dev, sortBy) => {
     } else {
         return dev;
     }
-
-
 }
+
+
 
 //displaying notes when sort alhabetically
 const displaySort = (devDetails, filteredSearch) => {
@@ -245,6 +254,8 @@ const displaySort = (devDetails, filteredSearch) => {
 
 }
 
+
+
 //event listners for the dropdown to sort notes accordingly
 document.querySelector('#dropdown').addEventListener('change', (e) => {
 
@@ -253,7 +264,6 @@ document.querySelector('#dropdown').addEventListener('change', (e) => {
 
     //rerender things again
     displaySort(devDetails,filteredSearch)
-
 })
 
 
