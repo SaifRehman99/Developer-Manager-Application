@@ -73,7 +73,7 @@ document.querySelector('#addDetails').addEventListener('click', (e) => {
     savingData(devDetails);
 
 
-    
+
     //clearing the dom to save from rerender the things many times
     document.querySelector('#dev_cards').innerHTML = '';
     displayDev(devDetails)
@@ -147,6 +147,7 @@ let generatingDom = (item) => {
     // edit button here
     btn2.addEventListener('click', (e) => {
 
+        //to remove the default behaviour
         e.preventDefault();
 
 
