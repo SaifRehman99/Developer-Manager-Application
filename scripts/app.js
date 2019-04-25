@@ -9,7 +9,6 @@ let getSavedData = () => {
 }
 //Developer arrays of objects here
 let devDetails = getSavedData();
-
 //===========End Here===============//
 
 
@@ -27,8 +26,6 @@ const filteredSearch = {
 let savingData = (devDetails) => {
     localStorage.setItem('devDetails', JSON.stringify(devDetails));
 }
-
-
 //==========================End Here==========================//
 
 
