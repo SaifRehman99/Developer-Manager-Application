@@ -72,6 +72,8 @@ document.querySelector('#addDetails').addEventListener('click', (e) => {
     //saving data in the local stroage here
     savingData(devDetails);
 
+
+    
     //clearing the dom to save from rerender the things many times
     document.querySelector('#dev_cards').innerHTML = '';
     displayDev(devDetails)
