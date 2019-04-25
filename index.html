@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+    <!-- Font Awesome Here -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+    <title>Developer Application</title>
+</head>
+
+<body>
+
+    <!-- Starting From Here -->
+    
+    <div class="wrapper" style="background-image: url('img/img2.jpg');">
+        <!-- Navbar Here -->
+        <nav>
+            <div class="nav-wrapper grey darken-4">
+                <a href="#" class="brand-logo center col s12">Developer Manager Application</a>
+            </div>
+        </nav>
+
+
+        <!-- Add Details Button -->
+        <div class="center-align addDetails">
+            <a class="modal-trigger" href="#modal1">
+                <button class="btn waves-effect waves-light grey" type="Submit">Add Developer <i
+                        class="material-icons left">add</i></button>
+            </a>
+        </div>
+        <br>
+
+        <!-- sort button here -->
+        <div class="center-align sortDetails">
+            <div class="row">
+                <div class="input-field col s6 offset-s3 m6 offset-m3">
+                    <select id="dropdown">
+                        <option value="" disabled selected>Sort</option>
+                        <option value="alpha">Alphabetically</option>
+                    </select>
+                    <label>Sort Developer</label>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Modal Structure -->
+        <div id="modal1" class="modal ">
+            <div class="modal-content">
+                <h4 class="center-align black-text ">Add Details</h4>
+                <div class="row">
+                    <form class="col s12">
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <i class="material-icons prefix">account_circle</i>
+                                <input placeholder="First Name" id="first_name" type="text" class="validate" value="">
+                                <label for="first_name">First Name</label>
+                            </div>
+                            <div class="input-field col s6">
+                                <i class="fas fa-envelope-open prefix"></i>
+                                <input id="email" type="email" class="validate">
+                                <label for="email">Email</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <i class="fas fa-poll-h prefix"></i>
+                                <input placeholder="Designation" id="designation" type="text" class="validate" value="">
+                                <label for="designation">Designation</label>
+                            </div>
+
+                            <!-- <div class="input-field col s6">
+                                Customizable input 
+                                <i class="fas fa-plus-circle prefix"></i>
+                                <div class="chips chips-placeholder" id="chip"></div>
+                            </div> -->
+                            <div class="input-field col s6">
+                                <i class="fas fa-plus-circle prefix"></i>
+                                <input placeholder="Enter Your Skills" id="skills" type="text" class="validate"
+                                    value="">
+                                <label for="skilss">Skills</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <i class="far fa-credit-card prefix"></i>
+                                <input placeholder="Salary" id="salary" type="text" class="validate" value="">
+                                <label for="salary">Salary</label>
+
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <i class="fab fa-linkedin prefix"></i>
+                                <input placeholder="Linkedin" id="linkedin" type="text" class="validate" value="">
+                                <label for="linkedin">Linkedin Account</label>
+                            </div>
+                            <div class="input-field col s6">
+                                <i class="fab fa-github prefix"></i>
+                                <input placeholder="Github" id="github" type="text" class="validate" value="">
+                                <label for="github">github Account</label>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="modal-footer foot grey">
+                <a href="#!" class="modal-close waves-effect waves-green btn-flat white-text text-darken-4"
+                    id="addDetails">Add</a>
+                <a href="#!" class="modal-close waves-effect waves-green btn-flat white-text text-darken-4">Cancel</a>
+            </div>
+        </div>
+        <div class="container cards">
+            <div class="row" id="dev_cards">
+                <!-- adding DOM here -->
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+<!-- Compiled and minified JavaScript -->
+<script src="https://code.jquery.com/jquery-3.4.0.min.js"
+    integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="scripts/uuid.js"></script>
+<script src="scripts/app.js"></script>
+
+<script>
+
+
+    //modal
+    $(document).ready(function () {
+        $('.modal').modal();
+    });
+
+    //chips
+    $('.chips').chips();
+    $('.chips-initial').chips({
+        data: [{
+            tag: 'Apple',
+        }, {
+            tag: 'Microsoft',
+        }, {
+            tag: 'Google',
+        }],
+    });
+    $('.chips-placeholder').chips({
+        placeholder: 'Add Skills',
+        secondaryPlaceholder: '+Tag',
+    });
+    $('.chips-autocomplete').chips({
+        autocompleteOptions: {
+            data: {
+                'Apple': null,
+                'Microsoft': null,
+                'Google': null
+            },
+            limit: Infinity,
+            minLength: 1
+        }
+    });
+
+
+    //parallax here
+    $(document).ready(function () {
+        $('.parallax').parallax();
+    });
+
+
+    // select options here
+
+    $(document).ready(function () {
+        $('select').formSelect();
+    });
+
+
+</script>
+
+</html>
