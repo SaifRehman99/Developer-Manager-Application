@@ -52,7 +52,7 @@ document.querySelector('#addDetails').addEventListener('click', (e) => {
 
 
     // validating form here not to add null values
-    // if (name.length > 0 && email.length > 0 && designation.length > 0 && salary.length > 0 && linkedin.length > 0 && github.length > 0) {
+    if (name.length > 0 && email.length > 0 && designation.length > 0 && salary.length > 0 && linkedin.length > 0 && github.length > 0) {
 
     //getting chips values here
     // let ook = JSON.stringify(M.Chips.getInstance($('.chips')).chipsData[0].tag);     
@@ -80,10 +80,10 @@ document.querySelector('#addDetails').addEventListener('click', (e) => {
     displayDev(devDetails)
 
 
-    // }
-    // else {
-    // alert('Please Enter Complete Details!');
-    // }
+    }
+    else {
+    alert('Please Enter Complete Details!');
+    }
 
 })
 
@@ -148,26 +148,25 @@ let generatingDom = (item) => {
 
 
     //edit button here
-    btn2.addEventListener('click', (e) => {
+    // btn2.addEventListener('click', (e) => {
 
-        //to remove the default behaviour
-        e.preventDefault();
+    //     //to remove the default behaviour
+    //     e.preventDefault();
 
 
-        ////getting input values here again to edit
-        let name = document.querySelector('#first_name').value;
-        let email = document.querySelector('#email').value;
-        let designation = document.querySelector('#designation').value;
-        let skills = document.querySelector('#skills').value;
-        let salary = document.querySelector('#salary').value;
-        let linkedin = document.querySelector('#linkedin').value;
-        let github = document.querySelector('#github').value;
+    //     ////getting input values here again to edit
+    //     let name = document.querySelector('#first_name').value;
+    //     let email = document.querySelector('#email').value;
+    //     let designation = document.querySelector('#designation').value;
+    //     let skills = document.querySelector('#skills').value;
+    //     let salary = document.querySelector('#salary').value;
+    //     let linkedin = document.querySelector('#linkedin').value;
+    //     let github = document.querySelector('#github').value;
 
-        editDev(item.id, name, email, designation, skills, salary, linkedin, github);
-        savingData(devDetails);
-        // document.querySelector('#dev_cards').innerHTML = '';
-        // displayDev(devDetails);
-    })
+    //     editDev(item.id, name, email, designation, skills, salary, linkedin, github);
+    //     displayDev(devDetails)
+
+    // })
 
     return div;
 }
@@ -175,28 +174,27 @@ let generatingDom = (item) => {
 
 
 ////function to edit a card
-let editDev = (id, namee, emaill, designationn, skillss, salaryy, linkedinn, githubb) => {
+// let editDev = (id, namee, emaill, designationn, skillss, salaryy, linkedinn, githubb) => {
 
-    let editID = devDetails.findIndex((item) => item.id === id);
-    console.log(devDetails[0].name)
+//     let editID = devDetails.findIndex((item) => item.id === id);
 
-    if (editID > -1) {
-        devDetails[editID].name = namee;
-        devDetails[editID].email = emaill;
-        devDetails[editID].designation = designationn;
-        devDetails[editID].skills = skillss;
-        devDetails[editID].salary = salaryy;
-        devDetails[editID].linkedin_account = linkedinn;
-        devDetails[editID].github_account = githubb;
+//     if (editID > -1) {
+//         devDetails[editID].name = namee;
+//         devDetails[editID].email = emaill;
+//         devDetails[editID].designation = designationn;
+//         devDetails[editID].skills = skillss;
+//         devDetails[editID].salary = salaryy;
+//         devDetails[editID].linkedin_account = linkedinn;
+//         devDetails[editID].github_account = githubb;
 
-        savingData(devDetails);
-        // displayDev(devDetails)
-        // console.log(devDetails)
-    }
-    else{
-        return [];
-    }
-}
+//         savingData(devDetails);
+
+//     }
+//     else {
+//         return [];
+//     }
+
+// }
 
 
 
@@ -258,19 +256,19 @@ const displaySort = (devDetails, filteredSearch) => {
 
 
 
-//event listners for the dropdown to sort notes accordingly
+//event listners for the drop-down to sort notes accordingly
 document.querySelector('#dropdown').addEventListener('change', (e) => {
 
     //to update the latest input values in the sort array
     filteredSearch.sortDev = e.target.value;
 
-    //rerender things again
-    displaySort(devDetails,filteredSearch)
+    //re-render things again
+    displaySort(devDetails, filteredSearch)
 })
 
 
 
-// Function to rerender the list when enter the data
+// Function to re-render the list when enter the data
 const displayDev = (devArray) => {
     devArray.forEach((item) => {
         document.querySelector('#dev_cards').appendChild(generatingDom(item))
