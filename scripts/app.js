@@ -147,12 +147,11 @@ let generatingDom = (item) => {
     })
 
 
-    // edit button here
+    //edit button here
     btn2.addEventListener('click', (e) => {
 
         //to remove the default behaviour
         e.preventDefault();
-
 
 
         ////getting input values here again to edit
@@ -176,23 +175,26 @@ let generatingDom = (item) => {
 
 
 ////function to edit a card
-let editDev = (id, name, email, designation, skills, salary, linkedin, github) => {
+let editDev = (id, namee, emaill, designationn, skillss, salaryy, linkedinn, githubb) => {
 
     let editID = devDetails.findIndex((item) => item.id === id);
+    console.log(devDetails[0].name)
 
     if (editID > -1) {
-        devDetails[editID].name = name;
-        devDetails[editID].email = email;
-        devDetails[editID].designation = designation;
-        devDetails[editID].skills = skills;
-        devDetails[editID].salary = salary;
-        devDetails[editID].linkedin_account = linkedin;
-        devDetails[editID].github_account = github;
-
+        devDetails[editID].name = namee;
+        devDetails[editID].email = emaill;
+        devDetails[editID].designation = designationn;
+        devDetails[editID].skills = skillss;
+        devDetails[editID].salary = salaryy;
+        devDetails[editID].linkedin_account = linkedinn;
+        devDetails[editID].github_account = githubb;
 
         savingData(devDetails);
         // displayDev(devDetails)
         // console.log(devDetails)
+    }
+    else{
+        return [];
     }
 }
 
