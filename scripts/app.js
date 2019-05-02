@@ -102,7 +102,7 @@ let generatingDom = (item) => {
     btn1.classList.add('btn', 'far', 'fa-trash-alt', 'right');
     btn2.classList.add('btn', 'far', 'fa-edit', 'right');
     btn2.setAttribute('href', '#modal1');
-    btn2.classList.add('modal-trigger');
+    // btn2.classList.add('modal-trigger    ');
     div2.appendChild(btn1);
     div2.appendChild(btn2);
     const para1 = document.createElement('p');
