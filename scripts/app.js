@@ -52,7 +52,7 @@ document.querySelector('#addDetails').addEventListener('click', (e) => {
 
 
     // validating form here not to add null values
-    if (name.length > 0 && email.length > 0 && designation.length > 0 && salary.length > 0 && linkedin.length > 0 && github.length > 0) {
+    // if (name.length > 0 && email.length > 0 && designation.length > 0 && salary.length > 0 && linkedin.length > 0 && github.length > 0) {
 
     //getting chips values here
     // let ook = JSON.stringify(M.Chips.getInstance($('.chips')).chipsData[0].tag);     
@@ -70,7 +70,7 @@ document.querySelector('#addDetails').addEventListener('click', (e) => {
         id: uuidv4(),
 
     })
-    //saving data in the local stroage here
+    //saving data in the local storage here
     savingData(devDetails);
 
 
@@ -80,10 +80,10 @@ document.querySelector('#addDetails').addEventListener('click', (e) => {
     displayDev(devDetails)
 
 
-    }
-    else {
-    alert('Please Enter Complete Details!');
-    }
+    // }
+    // else {
+    // alert('Please Enter Complete Details!');
+    // }
 
 })
 
